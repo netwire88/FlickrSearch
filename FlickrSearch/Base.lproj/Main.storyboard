@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6162" systemVersion="14A238h" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6160"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FlickrSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,100 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omV-0p-bTu">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="nbv-rM-TEH">
+                                        <connections>
+                                            <action selector="shareButtonTapped:" destination="BYZ-38-t0r" id="rWQ-xB-coD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="640" height="44"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                </variation>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider_bar" translatesAutoresizingMaskIntoConstraints="NO" id="BI0-Ah-Z1J">
+                                <rect key="frame" x="20" y="124" width="440" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="Qb7-xx-1rM"/>
+                                </constraints>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="124" width="600" height="29"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6H-l2-sf3">
+                                <rect key="frame" x="20" y="90" width="110" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="tOi-Mh-fcn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <rect key="frame" x="20" y="90" width="86" height="21"/>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES"/>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="95" width="54" height="21"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="74" width="54" height="30"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JAs-aU-cYk">
+                                <rect key="frame" x="154" y="86" width="306" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="97" y="87" width="363" height="30"/>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="114" y="86" width="186" height="30"/>
+                                </variation>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="116" y="91" width="504" height="30"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="96" y="70" width="204" height="30"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eUV-WX-ZPY"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BI0-Ah-Z1J" firstAttribute="top" secondItem="JAs-aU-cYk" secondAttribute="bottom" constant="8" symbolic="YES" id="0UE-La-sfe"/>
+                            <constraint firstItem="BI0-Ah-Z1J" firstAttribute="centerX" secondItem="omV-0p-bTu" secondAttribute="centerX" id="8Be-G7-vnR"/>
+                            <constraint firstItem="omV-0p-bTu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GWP-7S-taY"/>
+                            <constraint firstItem="BI0-Ah-Z1J" firstAttribute="top" secondItem="P6H-l2-sf3" secondAttribute="bottom" constant="13" id="HNI-Fs-VoK"/>
+                            <constraint firstAttribute="trailing" secondItem="JAs-aU-cYk" secondAttribute="trailing" constant="20" symbolic="YES" id="Ppk-Lt-qfW"/>
+                            <constraint firstItem="BI0-Ah-Z1J" firstAttribute="trailing" secondItem="JAs-aU-cYk" secondAttribute="trailing" id="Xf8-gk-Ldw"/>
+                            <constraint firstItem="P6H-l2-sf3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="bVU-bZ-aXj"/>
+                            <constraint firstItem="JAs-aU-cYk" firstAttribute="top" secondItem="omV-0p-bTu" secondAttribute="bottom" constant="42" id="o8X-y7-CH7"/>
+                            <constraint firstItem="JAs-aU-cYk" firstAttribute="leading" secondItem="P6H-l2-sf3" secondAttribute="trailing" constant="24" id="thL-dS-nxQ"/>
+                            <constraint firstItem="omV-0p-bTu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wh5-Oj-2u1"/>
+                            <constraint firstItem="BI0-Ah-Z1J" firstAttribute="leading" secondItem="P6H-l2-sf3" secondAttribute="leading" id="zbM-sj-uMh"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <connections>
+                        <outlet property="searchtextField" destination="JAs-aU-cYk" id="dWx-Xm-Q5b"/>
+                        <outlet property="shareButton" destination="nbv-rM-TEH" id="eFd-0E-fzF"/>
+                        <outlet property="toolbar" destination="omV-0p-bTu" id="xxH-l8-Szk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138" y="141"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="divider_bar" width="697" height="13"/>
+    </resources>
 </document>

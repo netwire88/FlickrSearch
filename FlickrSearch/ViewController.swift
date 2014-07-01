@@ -9,10 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var toolbar: UIToolbar
+    @IBOutlet var shareButton: UIBarButtonItem
+    @IBOutlet var searchtextField: UITextField
                             
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"bg_cork.png"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +26,8 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func shareButtonTapped(sender: AnyObject) {
+    }
+    
 }
 
